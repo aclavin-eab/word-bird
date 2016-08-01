@@ -1,0 +1,119 @@
+/*STYLES*/
+.backgroundTweets{
+	position: absolute;
+	top: 0;
+	line-height: 12px;
+    font-family: monospace;
+}
+
+.backgroundTweets > * {
+	opacity: .5;
+}
+
+.backgroundTweets div {
+	padding: 0;
+}
+
+.backgroundTweets > *:hover {
+	opacity: .9;
+}
+
+div .message {
+	float: right;
+}
+
+div .message div {
+	background-color: #e5e5ea;
+	padding:5px 10px 5px 5px;
+	max-width: 100%;
+	margin: 1px 0;
+	border-radius: 14px;
+	position: relative;
+}
+div .message:not(.response) div {
+	float: right;
+}
+div .message:not(.response) div:before {
+	content: "";
+    position: absolute;
+    bottom: 0;
+    right: -4px;
+    height: 16px;
+    border-right: 12px solid #e5e5ea;
+    background: #e5e5ea;
+    border-bottom-left-radius: 9px 6px;
+}
+div .message:not(.response) div:after {
+	content: "";
+    position: absolute;
+    bottom: 0;
+    right: -12px;
+    height: 16px;
+    border-right: 12px solid #fff;
+    background: #fff;
+    border-bottom-left-radius: 6px 6px;
+}
+
+.message.response {
+	float: left;
+}
+
+.message.response div {
+	background-color: #32a4fa;
+	color: #fff;
+	padding:5px 5px 5px 10px;
+}
+.message.response div:before {
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    height: 16px;
+    border-left: 12px solid #32a4fa;
+    background: #32a4fa;
+    border-bottom-right-radius: 9px 6px;
+}
+.message.response div:after {
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+    height: 16px;
+    border-left: 12px solid #fff;
+    background: #fff;
+    border-bottom-right-radius: 6px 6px;
+}
+div .inputer {
+	margin-top: 60px;
+    background-color: #f7f9fc;
+    padding: 10px;
+    border: solid 1px #dde;
+}
+div .inputerbox {
+	background-color: #fbfcfd;
+    min-height: 25px;
+    border-radius: 6px;
+    border-color: #e9f2ff;
+    border-width: 1px;
+    border-style: solid;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+div .inputerbox:focus {
+	outline: none;
+	border-color:#e4efff;
+	background-color: #fdfdfe;
+}
+.send{
+	background: transparent;
+    border-style: none;
+    color: #32a4fa;
+}
+.send:hover {
+	cursor: pointer;
+}
+.send:focus, .send.unSendable {
+	outline: none;
+	color: #b6d6f5;
+	cursor: default;
+}

@@ -1,0 +1,10 @@
+
+<div data-ng-controller="InputController" class="row">
+
+		<div class="col-md-4 col-md-offset-4 row inputer">
+				<div contenteditable name="chat" class="col-md-9 col-md-offset-1 inputerbox" data-ng-model="chatInput">
+				</div>
+				<button class="col-md-2 send"  data-ng-class="{unSendable: !chatInput}" data-ng-click="sayIt(chatInput)">Send</button>
+		</div>
+	
+</div>

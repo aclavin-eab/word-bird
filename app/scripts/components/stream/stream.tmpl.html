@@ -1,0 +1,9 @@
+<div data-ng-controller="StreamController" class="row backgroundTweets">
+	<div class="col-md-2" data-ng-repeat="tweets in statuses.notifications">
+			<div data-ng-repeat="tweet in tweets">
+				<span data-ng-bind="tweet.user.name"></span> says:
+				<span data-ng-bind="tweet.text"></span>
+				<span data-ng-bind="tweet.created_at">
+			</div>
+		</div>
+</div>
