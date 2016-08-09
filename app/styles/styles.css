@@ -1,25 +1,168 @@
 /*STYLES*/
 .backgroundTweets{
-	position: absolute;
+	position: fixed;
 	top: 0;
-	line-height: 12px;
+	line-height: .9;
     font-family: monospace;
+    /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.backgroundTweets.row {
+	margin-left: 2px;
+}
+.animate {
+	transition-duration: .25s;
+    transition-timing-function: ease-in-out;
 }
 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-10,
+.backgroundTweets .col-md-4 + .col-md-10 {
+	width: 66.66666667%;
+}
+
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-10,
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-10,
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-10,
+.backgroundTweets .col-md-6 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-8,
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-8,
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-8,
+.backgroundTweets .col-md-6 + .col-md-8 {
+	width: 50%;
+}
+
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-10, 
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-10, 
+.backgroundTweets .col-md-4 + .col-md-4 + .col-md-10, 
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-10, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-10, 
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-10, 
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-10, 
+.backgroundTweets .col-md-8 + .col-md-10, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-8, 
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-8,
+.backgroundTweets .col-md-4 + .col-md-4 + .col-md-8, 
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-8, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-8, 
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-8, 
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-8, 
+.backgroundTweets .col-md-8 + .col-md-8, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-6, 
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-6,
+.backgroundTweets .col-md-4 + .col-md-4 + .col-md-6, 
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-6, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-6, 
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-6, 
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-6, 
+.backgroundTweets .col-md-8 + .col-md-6 {
+	width: 33.3333333333%;
+}
+
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-10,  
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-2 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-2 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-4 + .col-md-10,  
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-2 + .col-md-10, 
+.backgroundTweets .col-md-6 + .col-md-4 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-2 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-6 + .col-md-10,  
+.backgroundTweets .col-md-8 + .col-md-2 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-8 + .col-md-10,  
+.backgroundTweets .col-md-10 + .col-md-10,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-4 + .col-md-8,  
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-6 + .col-md-4 + .col-md-8,
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-6 + .col-md-8,  
+.backgroundTweets .col-md-8 + .col-md-2 + .col-md-8,  
+.backgroundTweets .col-md-2 + .col-md-8 + .col-md-8,  
+.backgroundTweets .col-md-10 + .col-md-8, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-6,  
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-6,  
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-2 + .col-md-6,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-2 + .col-md-6,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-4 + .col-md-6,  
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-2 + .col-md-6,
+.backgroundTweets .col-md-6 + .col-md-4 + .col-md-6,  
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-2 + .col-md-6,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-6 + .col-md-6,  
+.backgroundTweets .col-md-8 + .col-md-2 + .col-md-6,  
+.backgroundTweets .col-md-2 + .col-md-8 + .col-md-6,  
+.backgroundTweets .col-md-10 + .col-md-6, 
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-4,  
+.backgroundTweets .col-md-4 + .col-md-2 + .col-md-2 + .col-md-2 + .col-md-4,  
+.backgroundTweets .col-md-2 + .col-md-4 + .col-md-2 + .col-md-2 + .col-md-4,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-4 + .col-md-2 + .col-md-4,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-2 + .col-md-4 + .col-md-4,  
+.backgroundTweets .col-md-6 + .col-md-2 + .col-md-2 + .col-md-4,
+.backgroundTweets .col-md-6 + .col-md-4 + .col-md-4,  
+.backgroundTweets .col-md-2 + .col-md-6 + .col-md-2 + .col-md-4,  
+.backgroundTweets .col-md-2 + .col-md-2 + .col-md-6 + .col-md-4,  
+.backgroundTweets .col-md-8 + .col-md-2 + .col-md-4,  
+.backgroundTweets .col-md-2 + .col-md-8 + .col-md-4,  
+.backgroundTweets .col-md-10 + .col-md-4 {
+	width: 16.66666667%;
+}
+
+.col-md-2.left {
+	margin-left: -16.66666667%;
+}
+.col-md-10.left {
+	margin-left: -83.333333%;
+}
+.col-md-8.left {
+	margin-left: -66.666666667%;
+}
+.col-md-6.left {
+	margin-left: -50%;
+}
+.col-md-4.left {
+	margin-left: -33.33333333%;
+}
 .backgroundTweets > * {
-	opacity: .5;
+	opacity: .2;
 }
 
 .backgroundTweets div {
 	padding: 0;
+	margin-left: 0;
 }
 
 .backgroundTweets > *:hover {
-	opacity: .9;
+	opacity: .35;
 }
 
 div .message {
 	float: right;
+	margin-left: 3px;
+    margin-right: 3px;
+    clear: both;
+    width: 91%;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+}
+
+div .message:hover {
+	margin-left:4px;
+	margin-right:4px;
 }
 
 div .message div {
@@ -29,6 +172,7 @@ div .message div {
 	margin: 1px 0;
 	border-radius: 14px;
 	position: relative;
+	float: left;
 }
 div .message:not(.response) div {
 	float: right;
@@ -84,10 +228,12 @@ div .message:not(.response) div:after {
     border-bottom-right-radius: 6px 6px;
 }
 div .inputer {
-	margin-top: 60px;
     background-color: #f7f9fc;
     padding: 10px;
     border: solid 1px #dde;
+	position: absolute;
+	bottom: 0;  
+	width: 100%;  
 }
 div .inputerbox {
 	background-color: #fbfcfd;
@@ -96,8 +242,7 @@ div .inputerbox {
     border-color: #e9f2ff;
     border-width: 1px;
     border-style: solid;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 2px 8px;
 }
 div .inputerbox:focus {
 	outline: none;
@@ -116,4 +261,36 @@ div .inputerbox:focus {
 	outline: none;
 	color: #b6d6f5;
 	cursor: default;
+}
+
+.chatAndInputWrapper.specifity {
+	position: fixed;
+	bottom: 10%;
+	height: 80%;
+}
+
+.chatBox {
+	position: absolute;
+    bottom: 47px;
+    overflow: scroll;
+    height: 93%;
+    margin-left: -7px;
+    margin-right: 7px;
+    min-width: 97%;
+}
+.siteMessage {
+    font-weight: bold;
+    font-size: 43px;
+    line-height: 1.1;
+    margin-left: 19px;
+}
+@media (max-width: 767px) {
+	.chatAndInputWrapper.specifity {
+		position: fixed;
+		bottom: 0;
+		height: 95%;
+	}
+}
+.scrollhere {
+	margin-top: 20px;
 }

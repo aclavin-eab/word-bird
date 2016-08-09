@@ -1,9 +1,13 @@
 <div data-ng-controller="StreamController" class="row backgroundTweets">
-	<div class="col-md-2" data-ng-repeat="tweets in statuses.notifications">
-			<div data-ng-repeat="tweet in tweets">
+	<div class="col-sm-4 col-xs-6 twits" data-ng-repeat="twit in statuses.notifications" data-ng-class="{'col-md-2': (twit.columnWidth < 70), 'col-md-4': (twit.columnWidth >= 70 && twit.columnWidth < 85), 'col-md-6': (twit.columnWidth >=85 && twit.columnWidth < 92), 'col-md-8': (twit.columnWidth >= 92 && twit.columnWidth < 97), 'col-md-10': (twit.columnWidth >= 97), 'left': twit.outLeft, 'animate': twit.animate}">
+			<div data-ng-repeat="tweet in twit.tweets" style="font-size:{{tweet.textSize}}">
 				<span data-ng-bind="tweet.user.name"></span> says:
 				<span data-ng-bind="tweet.text"></span>
 				<span data-ng-bind="tweet.created_at">
 			</div>
-		</div>
+	</div>
+	<div data-ng-if="statuses.notifications.length < 6" data-ng-bind="message" 
+	data-ng-class="{'col-md-10,col-sm-8,col-xs-6': statuses.notifications.length == 1, 'col-md-8,col-sm-4': statuses.notifications.length == 2, 'col-md-6': statuses.notifications.length == 3, 'col-md-4': statuses.notifications.length == 4, 'col-md-2': statuses.notifications.length == 5}" class="siteMessage">
+
+	</div>
 </div>
